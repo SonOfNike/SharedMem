@@ -45,8 +45,8 @@ int main() {
     }
     close(shm_fd);
 
-    // Remove the shared memory object (if this is the last process)
-    // shm_unlink(shm_name);
+    Remove the shared memory object (if this is the last process)
+    shm_unlink(shm_name);
 
     return 0;
 }
