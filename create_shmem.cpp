@@ -6,6 +6,7 @@
 #include "../Utils/MDShmem.h"
 #include "../Utils/ReqShmem.h"
 #include "../Utils/RespShmem.h"
+#include "../Utils/Shmem.h"
 
 
 int main() {
@@ -87,6 +88,7 @@ int main() {
         req_shmem->m_queue[i].m_type = req_type::NONE;
     }
     req_shmem->next_write_index = 0;
+    req_shmem->next_order_id = 0;
 
     // Unmap and close (optional, depending on use case)
     if (munmap(req_shmem, shm_size) == -1) {
